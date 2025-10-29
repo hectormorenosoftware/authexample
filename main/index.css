@@ -1,0 +1,58 @@
+body {
+  font-family: "Lato";
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.5;
+  background: linear-gradient(102.24deg, #f31768 0%, #f5d323 100%);
+}
+
+input:focus {
+  outline: none;
+}
+
+.FirstH1 {
+  font-weight: 500;
+  color: white;
+}
+
+.FirstDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 150px;
+}
+
+.UserEmailInput {
+  width: 250px;
+  height: 35px;
+  border-radius: 20px;
+  border: none;
+  text-align: center;
+}
+
+.PasswordInput {
+  width: 250px;
+  height: 35px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.SignInButton {
+  width: 220px;
+  height: 40px;
+  border-radius: 22px;
+  border: none;
+  font-size: 20px;
+  color: white;
+  background: #f8d005;
+  transition: 0.8s;
+  cursor: pointer;
+
+  &:hover {
+    background: #d50350;
+    color: black;
+  }
+}

@@ -1,0 +1,29 @@
+async function UserSignIn(email, password) {
+  if (email.length === 0 || password.length === 0) {
+    return null;
+  }
+
+  const url = `http://localhost:7000/passwords/${email}/${password}`;
+  const myHeaders = new Headers();
+  myHeaders.append("Accept", "application/json");
+  myHeaders.append("Content-Type", "application/json");
+
+  const res = await fetch(url, {
+    method: "GET",
+    headers: myHeaders,
+  });
+
+  const data = await res.json();
+
+  if (data.successfullyLoggedIn === true) {
+    window.open("/home.html");
+  } else {
+    return window.alert("Password is wrong or email");
+  }
+
+  try {
+  } catch (e) {
+    window.alert("Password is wrong or email");
+    throw new Error(e);
+  }
+}
