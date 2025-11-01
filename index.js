@@ -9,8 +9,8 @@ app.use(bodyParser.json());
 app.use(express.static("main"));
 
 app.post("/passwords", mongoDBClass.createPassword);
-app.get("/passwords/:email/:password", mongoDBClass.loginUser);
+app.get("/passwords/:email/:password", mongoDBClass.signInUser);
 
 app.listen(process.env.PORT || 7000, () => {
-  console.log("It's alive! on port 7000");
+  console.log("server hosted on port 7000");
 });

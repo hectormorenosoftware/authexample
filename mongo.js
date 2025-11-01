@@ -24,11 +24,11 @@ const createPassword = async (req, res, next) => {
   res.json(newPassword);
 };
 
-const loginUser = async (req, res, next) => {
+const signInUser = async (req, res, next) => {
   const client = new MongoClient(url);
   let passwords = null;
   let doesItMatch = null;
-  let filteredArrayByUserName = null;
+  let filteredArrayByEmail = null;
 
   const passwordToVerify = {
     email: req.params.email,
@@ -40,11 +40,11 @@ const loginUser = async (req, res, next) => {
     const db = client.db("company");
     passwords = await db.collection("passwords").find().toArray();
 
-    filteredArrayByUserName = passwords.filter((password) => {
+    filteredArrayByEmail = passwords.filter((password) => {
       return password.email === passwordToVerify.email;
     });
 
-    if (filteredArrayByUserName[0].password === passwordToVerify.password) {
+    if (filteredArrayByEmail[0].password === passwordToVerify.password) {
       doesItMatch = true;
     } else {
       doesItMatch = false;
@@ -63,4 +63,4 @@ const loginUser = async (req, res, next) => {
 };
 
 exports.createPassword = createPassword;
-exports.loginUser = loginUser;
+exports.signInUser = signInUser;
