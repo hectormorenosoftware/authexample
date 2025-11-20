@@ -50,13 +50,13 @@ input:focus {
   border: 2px solid black;
   font-size: 20px;
   color: white;
-  background: #f8d005;
+  background: transparent;
   transition: 0.8s;
   cursor: pointer;
 
   &:hover {
-    background: #d50350;
-    color: black;
+    background: black;
+    color: white;
     border: 1px solid white;
   }
 }
