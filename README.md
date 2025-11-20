@@ -3,3 +3,5 @@ This is a simple example in HTML5, CSS3, Javascript, Node JS, and MongoDB on how
 To start server:
 
 node index.js
+
+https://flourishing-elf-c8ace8.netlify.app/
